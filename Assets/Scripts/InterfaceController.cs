@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class InterfaceController : MonoBehaviour
 {
     public List<string> listaCodigosCorretos = new(){"7","9","8","1"};
-    public List<string> listaChavesCorretos = new(){"An(n) = (n+((183/262) em Z11))mod 26","An(n) = (n+((229/178) em Z7))mod 26","An(n) = (n+((165/289) em Z23))mod 26","An(n) = (n+((183/262) em Z11))mod 26"};
+    public List<string> listaChavesCorretos = new(){"An(n) = (n+((183/262) em Z11))mod 26","An(n) = (n+((229/178) em Z7))mod 26","An(n) = (n+((165/289) em Z23))mod 26","An(n) = (n+((27/19) em Z14))mod 26"};
 
-    public List<int> listaTransladosCifras = new(){2,4,18,9};
+    public List<int> listaTransladosCifras = new(){2,4,18,11};
     public int faseAtual;
 
     public Dictionary<int, TMP_InputField> inputPorFase = new();
@@ -25,6 +25,7 @@ public class InterfaceController : MonoBehaviour
     public TextMeshProUGUI palavraCodificada;
     public TextMeshProUGUI codigoCripto;
     public GameObject telaCofre;
+    public GameObject telaFinal;
     public Rigidbody2D player;
 
     public List<Objects> objetosf1;
@@ -33,8 +34,6 @@ public class InterfaceController : MonoBehaviour
     public List<Objects> objetosf4;
 
     bool cofreActive = false;
-    private bool fase1;
-    private bool fase2;
 
     void Start()
     {
@@ -76,6 +75,7 @@ public class InterfaceController : MonoBehaviour
     void Update()
     {
         OpenCofre();
+        Exit();
     }
 
     void OpenCofre(){
@@ -87,19 +87,11 @@ public class InterfaceController : MonoBehaviour
         }
     }
 
-    bool isFase1(){
-        return fase1;
-    }
-
-    void setFase1(bool value){
-        fase1 = value;
-    }
-
     void gerarFase(){
         int randomico = UnityEngine.Random.Range(0, objetosf1.Count);
         objetosPorFase[faseAtual][randomico].criptografarPalavra(listaTransladosCifras[faseAtual]);
         palavraCodificada.text =objetosPorFase[faseAtual][randomico].palavraCriptografada;
-        Debug.Log($"palavrasorteada: {objetosPorFase[faseAtual][randomico].palavraDescriptografada}");
+        codigoCripto.text = listaChavesCorretos[faseAtual];
         objetoAtual = objetosPorFase[faseAtual][randomico];
         
 
@@ -115,6 +107,13 @@ public class InterfaceController : MonoBehaviour
             if(faseAtual == 4){
                 palavraCodificada.text = "Você encontrou a chave!!";
                 codigoCripto.text = "";
+            }
+        }
+    }
+    void Exit(){
+        if(faseAtual == 4 && player.position.x >= 19 && player.position.x <=22 && player.position.y >= -3.5 && player.position.y <= -3){
+            if(Input.GetKeyDown(KeyCode.E)){
+                telaFinal.SetActive(true);
             }
         }
     }

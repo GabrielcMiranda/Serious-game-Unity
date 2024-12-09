@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && _activeFolhaRoutine == null && controladorObjeto != null && controladorObjeto.isCorrect())
             {
                 _activeFolhaRoutine = StartCoroutine(ActiveFolhaPapel());
-                Debug.Log("deu certo");
             }
 
         }

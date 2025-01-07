@@ -1,0 +1,86 @@
+								SERIOUS GAME
+
+
+
+
+HISTÓRIA: 
+
+	girotto e casseb recebem uma ligação da ale, que diz que vai passar a escritura do cesupa argo ao primeiro dos dois que chegar
+ao cartório. girotto, que estava ao lado de casseb no momento, o derruba no chao e o deixa inconsciente, montando um puzzle com inúmeros
+desafios sobre criptografia dentro do escritório da idopter labs. o objetivo de casseb é conseguir sair do escritório em tempo habil para
+chegar no cartório antes do girotto.
+
+
+
+
+ANOTAÇÔES:
+	
+	para liberar a porta, queria que o casseb conseguisse a chave dentro de um cofre, e pra desbloquear cada digito da senha ele teria
+que passar por um desafio de criptografia, mas pra isso eu teria que esconder no mapa mensagens criptografadas e suas respectivas chaves
+que levaassem ele a cada um dos digitos.
+
+	nao pensei em quantas vezes ele pode errar ainda, mas caso ele falhe vai aparecer o girotto explicando claramente o que ele tem
+que fazer pra passar, tipo "muahaha que burro, como ele não sabe que na criptografia de um alfabeto deve se pensar de tal forma... etc",
+literalmente dando a resposta da questao
+
+	provavelmente vou dividir a busca de cada digito em fases, pra conseguir criar um sistema que de uma dica ao usuário caso ele
+passe muito tempo sem resolver o puzzle, e até mesmo pra usar na lógica, por exemplo, tal mensagem nao aparece escondida em tal lugar
+enquanto nao chegar em tal fase, pra evitar que sigam um caminho alternativo ao que eu quero
+
+	pensei tambem em botar um item de heineken pro casseb com só 3 cargas durante o jogo todo, cada vez que ele tomasse mostraria
+certinho a resolucao do puzzle, igual um botao de dica
+
+	tenho que lembrar de botar o tempo que o usuario passou jogando no final, talvez até de pra fazer um sistema de pontuacao
+
+	toda vez que o usuario der pausa, alem das configuracoes normais, tem que ter um botao que mostre um resumo de criptografia, como
+funciona e tal, bem simpleszinho, resumo esse que também vai rodar antes da primeira run do jogo
+
+	tem que pensar logo nos tipos de criptografia a serem abordados, nao podem ser muito escrotos, quero fazer um jogo intuitivo e que
+possa ser jogado até por um mlk sla do sexto ano
+
+
+
+
+
+TO-DO LIST:
+
+
+resolver toda a parada de interação player-mapa
+-definir a história do jogo em si, onde vão estar as pistas, qual criptografias usar, quantos desafios fazer, etc
+-ta na hora de pensar em um nome ja ne
+-descobrir como vai funcionar a tela do cofre
+-fazer a logica das fases e do jogo em si, com excessao de umas que da pra colocar no final, tipo o tempo
+-ir atrás de uma sprite do girotto e do casseb
+-ver se da pra gravar cutscenes pra fazer inicio, final e game over do jogo
+-mandar pro elielson e ser feliz
+
+
+CRIPTOGRAFIAS DO JOGO
+
+-transladação do alfabeto/ cifra de césar
+
+x = (x+3)%26 (o módulo de 26 vai manter os valores no circulo)
+
+-rsa
+
+quais os dois numeros primos que tem o produto igual a chave de acesso
+
+
+
+Gabriel Alencar, um estagiário recém contratado pela big tech Idopter Labs, ficou responsável pelo fechamento do escritório um dia antes do primeiro dia de aula do cesupa no primeiro semestre de 2025, dia esse que deixava seu chefe, Ricardo Casseb, com os nervos a flor da pele.
+
+
+Depois de uma longa partida de clash royale, Gabriel acabou adormecendo no sofá, e quando acordou, faltavam poucos instantes para que casseb chegasse ao escritório e descobrisse o que ele havia feito na madrugada anterior.
+
+Desesperado com a situação, Gabriel lembra que existe uma chave reserva dentro do cofre de itens da empresa mas, para alcançá-la, ele deve descobrir a senha através das pistas que Casseb espalha pelo escritório, caso algum dia ele a esqueça.
+
+Gabriel deve fugir da sala, para que assim Casseb não se estresse desnecessariamente.
+
+
+
+sugestões girotto:
+cronometro
+pontuação pelo cronometro
+correr
+interagiveis brilhadno
+nao deixar burlar o cofre
